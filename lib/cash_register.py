@@ -32,8 +32,8 @@ class CashRegister:
     else:
       self.total += price
     
-    # Adds 'item' to the items list
-    self.items.append(item)
+      # Adds 'item' to the items list
+      self.items.append(item)
     # Adds details about the transaction to the 'previous_transactions' list
     self.previous_transactions.append({
       'item': item,
@@ -64,3 +64,12 @@ class CashRegister:
     
     # Removes the last item in the 'items' list to match 'previous_transactions' list
     self.items.pop()
+    
+    
+c1 = CashRegister()
+c1.add_item('eggs', 0.99, 2)
+c1.add_item('tomato', 1.76, 3)
+c1.apply_discount()
+print(c1.items)
+print(c1.previous_transactions)
+print(c1.total) 
