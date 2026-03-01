@@ -29,12 +29,11 @@ class CashRegister:
     self.items.append(item)
     
     # Adds details about the transaction to the 'previous_transactions' list
-    transaction = {
+    self.previous_transactions.append({
       'item': item,
       'price': price,
       'quantity': quantity
-    }
-    self.previous_transactions.append(transaction)
+    })
     
   def apply_discount(self):
     if not self.previous_transactions:
