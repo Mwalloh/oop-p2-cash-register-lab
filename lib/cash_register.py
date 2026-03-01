@@ -38,24 +38,24 @@ class CashRegister:
     })
     
   def apply_discount(self):
+    discount = self.total * self._discount/100
+    self.total -= discount 
+      
     if not self.previous_transactions:
       print("There is no discount to apply.")
-      return 
-    else:
-      discount = self.total * self._discount/100
-      last_item = self.previous_transactions[-1]
+      return
     
-      self.total -= discount 
-      self.previous_transactions.pop()
-      self.total -= last_item['price']
-      self.items.pop()
+  def void_last_transaction(self):
+    if not self.previous_transactions:
+      print("There is no discount to apply.")
+      return
     
+    # Removes the last item in the 'previous_transactions' list
+    self.previous_transactions.pop()
     
-c1 = CashRegister()
-c1.add_item('Lucky Charms', 4.5)
-print(c1.total)
-c1.add_item('Ritz Crackers', 5.0)
-print(c1.total)
-c1.add_item("Justin's Peanut Butter Cups", 2.50, 2)
-print(c1.previous_transactions)
-print(c1.total)
+    # Handles subtracting the price of the removed item from the 'total'
+    last_item = self.previous_transactions[-1]
+    self.total -= last_item['price']
+    
+    # Removes the last item in the 'items' list to match 'previous_transactions' list
+    self.items.pop()
