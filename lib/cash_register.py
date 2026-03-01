@@ -22,9 +22,8 @@ class CashRegister:
       
   # Function to add items
   def add_item(self, item, price, quantity):
-    # Checks whether price is an 'int' or a 'float' and sums it up with 'total'
-    if isinstance(price, (int, float)):
-      self.total += price
+    # Adds price to the 'total'
+    self.total += price
       
     # Adds 'item' to the items list
     self.items.append(item)
