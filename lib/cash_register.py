@@ -33,7 +33,7 @@ class CashRegister:
       self.total += price
     
     # Adds 'item' to the items list
-    
+    self.items.append(item)
     # Adds details about the transaction to the 'previous_transactions' list
     self.previous_transactions.append({
       'item': item,
