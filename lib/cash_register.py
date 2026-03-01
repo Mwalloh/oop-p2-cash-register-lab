@@ -51,21 +51,3 @@ class CashRegister:
       self.items.pop()
     
     
-c1 = CashRegister()
-# Before discount
-# c1.add_item("Soap", 20, 2)
-# c1.add_item("Soda", 100, 2)
-# c1.add_item("Mouse", 100, 1)
-print("BEFORE DISCOUNT")
-print(c1.items)
-print(c1.previous_transactions)
-print(c1.total)
-
-print("\n")
-
-# After discount
-print("AFTER DISCOUNT")
-c1.apply_discount()
-print(c1.items)
-print(c1.previous_transactions)
-print(c1.total)
