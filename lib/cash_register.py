@@ -55,21 +55,25 @@ class CashRegister:
       print("There is no transaction to void.")
       return
     
-    # Removes the last item in the 'previous_transactions' list
-    self.previous_transactions.pop()
-    
     # Handles subtracting the price of the removed item from the 'total'
     last_item = self.previous_transactions[-1]
-    self.total -= last_item['price']
+    self.total = self.total - (last_item['price'] * last_item['quantity'])
+
+    # Removes the last item in the 'previous_transactions' list
+    self.previous_transactions.pop()
     
     # Removes the last item in the 'items' list to match 'previous_transactions' list
     self.items.pop()
     
     
 c1 = CashRegister()
-c1.add_item('eggs', 0.99, 2)
-c1.add_item('tomato', 1.76, 3)
-c1.apply_discount()
+c1.add_item('tomato', 1.76, 2)
+print(c1.items)
+print(c1.previous_transactions)
+print(c1.total) 
+
+
+c1.void_last_transaction()
 print(c1.items)
 print(c1.previous_transactions)
 print(c1.total) 
