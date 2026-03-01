@@ -39,7 +39,8 @@ class CashRegister:
     
   def apply_discount(self):
     discount = self.total * self._discount/100
-    self.total -= discount 
+    self.total -= discount
+    print(f"After the discount, the total comes to ${self.total}")
       
     if not self.previous_transactions:
       print("There is no discount to apply.")
@@ -47,7 +48,7 @@ class CashRegister:
     
   def void_last_transaction(self):
     if not self.previous_transactions:
-      print("There is no discount to apply.")
+      print("There is no transaction to void.")
       return
     
     # Removes the last item in the 'previous_transactions' list
