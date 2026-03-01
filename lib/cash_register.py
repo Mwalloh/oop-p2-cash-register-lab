@@ -23,8 +23,8 @@ class CashRegister:
   # Function to add items
   def add_item(self, item, price, quantity=None):
     # Adds price to the 'total'
-    self.total += price
-      
+    self.total += (price * quantity)
+
     # Adds 'item' to the items list
     self.items.append(item)
     
@@ -49,3 +49,7 @@ class CashRegister:
       self.items.pop()
     
     
+c1 = CashRegister()
+c1.add_item('book', 5.00, 3)
+print(c1.previous_transactions)
+print(c1.total)
