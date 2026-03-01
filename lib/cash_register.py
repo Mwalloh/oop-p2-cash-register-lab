@@ -60,24 +60,10 @@ class CashRegister:
     if type(last_item['quantity']) == int:
       self.total = self.total - (last_item['price'] * last_item['quantity'])
 
-    
-    self.total -= last_item['price']
+    else:
+      self.total -= last_item['price']
     # Removes the last item in the 'previous_transactions' list
     self.previous_transactions.pop()
     
     # Removes the last item in the 'items' list to match 'previous_transactions' list
     self.items.pop()
-    
-    
-c1 = CashRegister()
-c1.add_item('apple', 0.99)
-c1.add_item('tomato', 1.76)
-print(c1.items)
-print(c1.previous_transactions)
-print(c1.total) 
-
-
-c1.void_last_transaction()
-print(c1.items)
-print(c1.previous_transactions)
-print(c1.total) 
