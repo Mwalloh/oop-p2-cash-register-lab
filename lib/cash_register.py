@@ -28,10 +28,7 @@ class CashRegister:
     else:
       self.total += price
     # Adds 'item' to the items list
-    x = 0
-    while x < quantity:
       self.items.append(item)
-      x += 1
     
     # Adds details about the transaction to the 'previous_transactions' list
     self.previous_transactions.append({
